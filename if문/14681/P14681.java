@@ -18,3 +18,8 @@ public class P14681 {
         }
     }
 }
+
+/*
+https://www.acmicpc.net/problem/14681
+
+*/

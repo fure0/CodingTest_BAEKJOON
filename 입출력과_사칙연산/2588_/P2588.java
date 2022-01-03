@@ -15,3 +15,18 @@ public class P2588 {
 		System.out.println(A*B);
     }
 }
+
+/*
+
+https://www.acmicpc.net/problem/2588
+
+예제 입력 1 
+472
+385
+예제 출력 1 
+2360
+3776
+1416
+181720
+
+ */
