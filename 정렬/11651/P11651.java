@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class P11651 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
