@@ -5,8 +5,8 @@ import java.util.StringTokenizer;
 
 public class P15649 {
 
-    public static int[] arr;
     public static boolean[] visit;
+    public static int[] arr;
     public static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
@@ -15,11 +15,11 @@ public class P15649 {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken()); //4
+        int M = Integer.parseInt(st.nextToken()); //2
 
-        arr = new int[M]; //2
         visit = new boolean[N]; //4
+        arr = new int[M]; //2
         dfs(N, M, 0);
         System.out.println(sb);
 
@@ -36,7 +36,7 @@ public class P15649 {
             return;
         }
         // ** DFS인것을 감안하자. 깊이 탐색이다. 결과의 첫째는 depth(세로) 값이다. N이 가로 값이다.
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) { // 0 < 4
             // 만약 해당 노드(값)을 방문하지 않았다면?
             if (!visit[i]) { // 중복값은 담지 않기 위해
                 visit[i] = true;
@@ -52,6 +52,11 @@ public class P15649 {
 
 
 /*
+https://www.acmicpc.net/problem/15649
+
+https://st-lab.tistory.com/114
+
+
 문제
 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.
 

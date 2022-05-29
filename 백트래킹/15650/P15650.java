@@ -47,6 +47,10 @@ public class P15650 {
 }
 
 /*
+https://www.acmicpc.net/problem/15650
+
+https://st-lab.tistory.com/115
+
 문제
 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.
 
