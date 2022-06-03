@@ -29,7 +29,7 @@ public class P1874 {
                 start = value; // 다음 push 할 때의 오름차순을 유지하기 위한 변수 초기화
             }
 
-            // top에 있는 원소가 입력받은 값과 같이 않은 경우
+            // top에 있는 원소가 입력받은 값과 같지 않은 경우
             else if (stack.peek() != value) {
                 System.out.println("NO");
                 return; // 또는 System.exit(0); 으로 대체해도 됨.
