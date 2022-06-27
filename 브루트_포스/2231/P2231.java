@@ -11,7 +11,10 @@ public class P2231 {
             int number = i;
             int sum = 0;
 
-            while(number !=0) { // int형 한자리수를 10으로 나누면 몫이 0이된다
+            // 각 자릿수 더하기
+            // 1의 자리수 % 10 = 1의 자리수
+            // 10의 자리수 % 10 = 10의 자리수
+            while(number !=0) {
                 sum += number % 10;
                 number /= 10;
             }

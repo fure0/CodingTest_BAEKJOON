@@ -12,7 +12,7 @@ public class P9663 {
  
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
-		arr = new int[N];
+		arr = new int[N]; //원소의 index를 '열'이라 생각하고, 원소 값을 '행'이라 생각
  
 		nQueen(0);
 		System.out.println(count);

@@ -1,72 +1,67 @@
+import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
-
+import java.util.StringTokenizer;
+ 
 public class P7562 {
-
-    static int[] dx = { -2, -1, 2, 1, -2, -1, 1, 2 };
-    static int[] dy = { 1, 2, 1, 2, -1, -2, -2, -1 };
-    static int[][] map;
-    static boolean[][] visit;
-    static int x, y, gx, gy, limit;
-    static int answer = 0;
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            limit = sc.nextInt();
-            map = new int[limit][limit];
-            visit = new boolean[limit][limit];
-            x = sc.nextInt();
-            y = sc.nextInt();
-            gx = sc.nextInt();
-            gy = sc.nextInt();
-
-            bfs();
-            System.out.println(map[gx][gy]);
+    static int moveX[] = {1,2,2,1,-1,-2,-2,-1};
+    static int moveY[] = {-2,-1,1,2,2,1,-1,-2};
+    
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int tc = Integer.parseInt(br.readLine());
+        for(int t=0; t<tc; t++) {
+            int n = Integer.parseInt(br.readLine());
+            int arr[][] = new int[n][n];
+            int currentX, currentY, targetX, targetY;
+            
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            currentX = Integer.parseInt(st.nextToken());
+            currentY = Integer.parseInt(st.nextToken());
+            
+            st = new StringTokenizer(br.readLine());
+            targetX = Integer.parseInt(st.nextToken());
+            targetY = Integer.parseInt(st.nextToken());
+            
+            Point start = new Point(currentX,currentY);
+            Point target = new Point(targetX, targetY);
+            
+            bfs(start, target, arr);
         }
-        sc.close();
     }
-
-    private static void bfs() {
-        if (x == gx && y == gy) {
-            return;
-        }
-
-        Queue<Integer> queuex = new LinkedList<>();
-        Queue<Integer> queuey = new LinkedList<>();
-
-        queuex.add(x);
-        queuey.add(y);
-        visit[x][y] = true;
-
-        while (!queuex.isEmpty()) {
-            int a = queuex.poll();
-            int b = queuey.poll();
-
-            for (int i = 0; i < dx.length; i++) {
-                int x1 = a + dx[i];
-                int y1 = b + dy[i];
-
-                if (x1 >= 0 && x1 < limit && y1 >= 0 && y1 < limit && !visit[x1][y1]) {
-                    queuex.add(x1);
-                    queuey.add(y1);
-
-                    visit[x1][y1] = true;
-
-                    map[x1][y1] = map[a][b] + 1;
+ 
+    private static void bfs(Point start, Point target, int[][] arr) {
+        Queue<Point> queue =new LinkedList<Point>();
+        queue.add(start);
+        boolean visit[][] = new boolean[arr.length][arr.length];
+        visit[start.y][start.x] = true;
+        while(!queue.isEmpty()) {
+            Point p = queue.poll();
+            if(p.y==target.y && p.x==target.x) {
+                System.out.println(arr[p.y][p.x]);
+                return;
+            }
+            
+            for(int d=0; d<8; d++) {
+                int newY = p.y + moveY[d];
+                int newX = p.x + moveX[d];
+                if(0<=newX && newX<arr.length && 0<=newY && newY<arr.length && !visit[newY][newX]) {
+                    visit[newY][newX] = true;
+                    arr[newY][newX] = arr[p.y][p.x] + 1;
+                    queue.add(new Point(newX,newY));
                 }
             }
         }
     }
-
 }
 
 /*
  * 
  * https://www.acmicpc.net/problem/7562
  * 
- * https://geunzrial.tistory.com/82
+ * https://ukyonge.tistory.com/87
  * 
  */

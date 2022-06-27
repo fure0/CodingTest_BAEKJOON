@@ -15,9 +15,9 @@ public class P1260 {
     public static void main(String[] args) throws IOException {
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-        int v = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken()); //정점의 개수
+        int m = Integer.parseInt(st.nextToken()); //간선의 개수
+        int v = Integer.parseInt(st.nextToken()); //탐색을 시작할 정점의 번호
 
         arr = new int[n + 1][n + 1];
         check = new boolean[n + 1];

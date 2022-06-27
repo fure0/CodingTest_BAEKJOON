@@ -32,7 +32,7 @@ public class P2178 {
         visited = new boolean[n][m];
         visited[0][0] = true;
         bfs(0, 0);
-        System.out.println(map[n - 1][m - 1]); //목적지의 코스트 출력
+        System.out.println(map[n - 1][m - 1]); //목적지의 코스트 출력 (배열 0부터 시작이니까 -1 해준다)
     }
 
     public static void bfs(int x, int y) {
@@ -54,7 +54,7 @@ public class P2178 {
                     continue;
 
                 q.add(new int[] { nextX, nextY });
-                map[nextX][nextY] = map[nowX][nowY] + 1;
+                map[nextX][nextY] = map[nowX][nowY] + 1; //최종 코스트를 계산하기 위해
                 visited[nextX][nextY] = true;
             }
         }

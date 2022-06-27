@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class P2798 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int M = sc.nextInt();
+        int N = sc.nextInt(); // 카드 개수
+        int M = sc.nextInt(); // 목표 수
 
         int[] arr = new int[N];
         for (int i=0; i<N; i++) {
@@ -18,12 +18,19 @@ public class P2798 {
     static int search(int[] arr, int N, int M) {
         int result = 0;
         for (int i = 0; i < N-2; i++) {
+            // 첫 번째 카드가 M 보다 크면 skip
+            if(arr[i] > M) continue;
+            
             for (int j = i+1; j <N-1; j++) {
+                // 두 번째 카드와 첫 번째 카드의 합이 M보다 크면 skip
+                if(arr[i] + arr[j] > M) continue;
+                
                 for (int k = j+1; k < N; k++) {
                     int temp = arr[i] + arr[j] + arr[k];
                     if (temp == M) {
                         return temp;
                     }
+                    // 목표값을 넘지 않는 최대값
                     if (result < temp && temp < M) {
                         result = temp;
                     }

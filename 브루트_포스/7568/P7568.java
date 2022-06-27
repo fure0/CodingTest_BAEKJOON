@@ -9,8 +9,8 @@ public class P7568 {
         int[][] arr = new int[N][2];
 
         for (int i = 0; i < N; i ++) {
-            arr[i][0] = sc.nextInt();
-            arr[i][1] = sc.nextInt();
+            arr[i][0] = sc.nextInt(); // [i][0] : 몸무게
+            arr[i][1] = sc.nextInt(); // [i][1] : 키
         }
 
         sc.close();

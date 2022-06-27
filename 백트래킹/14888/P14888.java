@@ -43,8 +43,13 @@ public class P14888 {
 			MIN = Math.min(MIN, num);
 			return;
 		}
- 
-		for (int i = 0; i < 4; i++) {
+		
+		// 여기서 조합이 이루어진다. (dfs 재귀로 for가 초기화 되기 때문에)
+		// i=0 에서 dfs안의 for가 i=0
+		// i=0 에서 dfs안의 for가 i=1
+		// i=1 에서 dfs안의 for가 i=0 같은식..
+		// dfs 니까 0 0 0 1, 0 0 0 2, 0 0 0 3, 0 0 0 4, 0 0 1 4, 0 0 2 4 ...
+		for (int i = 0; i < 4; i++) { 
 			// 연산자 개수가 1개 이상인 경우
 			if (operator[i] > 0) {
  

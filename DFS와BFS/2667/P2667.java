@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class P2667 {
 
-    static int[][] map = new int[25][25]; // 집의 존재 입력할 2차원 배열
+    static int[][] map = new int[25][25]; // 집의 존재 입력할 2차원 배열 (문제에서 25까지 제한둠)
     static boolean[][] visit = new boolean[25][25]; // 탐색할 집의 방문 여부 체크
-    private static int[] dx = { 0, -1, 0, 1 }; // dx, dy = 상하좌우
+    private static int[] dx = { 0, -1, 0, 1 }; // dx, dy = 좌상우하
     private static int[] dy = { -1, 0, 1, 0 };
     static int count = 1; // 방문한 단지 번호(연결된 단지가 아닐경우 1씩 증가)
     static int N; // 지도의 크기
@@ -14,8 +14,8 @@ public class P2667 {
     public static void dfs(int x, int y) {
         map[x][y] = count; // 방문한 집 => count로 표시(1, 2, 3, ... 하나씩 증가)
         visit[x][y] = true; // 방문한 집 => true 체크
-        for (int i = 0; i < 4; i++) { // 상, 하, 좌, 우 체크
-            // 좌(0,-1) 상(-1, 0), 우(0, 1), 하(1, 0)
+        for (int i = 0; i < 4; i++) { // 현재좌표 기준 좌상우하 체크
+            // 좌(0,-1) 상(-1, 0), 우(0, 1), 하(1, 0) 순으로
             int nx = x + dx[i];
             int ny = y + dy[i];
 
@@ -34,6 +34,7 @@ public class P2667 {
         for (int i = 0; i < N; i++) { // 2차원 행렬 입력받기
             String str = scan.next();
             for (int j = 0; j < N; j++) {
+                // charAt() 을 쓸 경우  - '0' 또는 -48 을 연산해야 한다. (아니면 아스키코드에 대응하는 문자가 나온다.)
                 map[i][j] = str.charAt(j) - '0';
             }
         }

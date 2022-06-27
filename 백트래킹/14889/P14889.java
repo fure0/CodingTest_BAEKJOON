@@ -13,12 +13,18 @@ public class P14889 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
  
-		N = Integer.parseInt(br.readLine());
+		N = Integer.parseInt(br.readLine()); // 입력
  
-		map = new int[N][N];
-		visit = new boolean[N];
+		map = new int[N][N]; // 조합 점수표
+		visit = new boolean[N]; // 방문 여부
  
- 
+		// 점수 입력 예
+		/*
+			0 1 2 3
+			4 0 5 6
+			7 1 0 2
+			3 4 5 0
+		*/
 		for (int i = 0; i < N; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
  
@@ -34,7 +40,8 @@ public class P14889 {
  
 	// idx는 인덱스, count는 조합 개수(=재귀 깊이)
 	static void combi(int idx, int count) {
-        // System.out.println("count = " + count);
+		System.out.println("idx = " + idx);
+        System.out.println("count = " + count);
 		// 팀 조합이 완성될 경우
         if(count == N / 2) { //N이4 이면 count 2에서 true, N이6 이면 count 3에서 true
 			/*
@@ -51,7 +58,7 @@ public class P14889 {
 				visit[i] = true;	// 방문으로 변경
 				combi(i + 1, count + 1);	// 재귀 호출
                 visit[i] = false;	// 재귀가 끝나면 비방문으로 변경
-                // System.out.println("----------");
+                System.out.println("----------");
 			}
 		}
 	}
@@ -63,8 +70,8 @@ public class P14889 {
  
 		for (int i = 0; i < N - 1; i++) {
 			for (int j = i + 1; j < N; j++) {
-                // System.out.print("i = " + i + ", j = " + j + "  ");
-                // System.out.println(visit[i] + ", " + visit[j]);
+                System.out.print("i = " + i + ", j = " + j + "  ");
+                System.out.println(visit[i] + ", " + visit[j]);
 				// i 번째 사람과 j 번째 사람이 true라면 스타트팀으로 점수 플러스 
 				if (visit[i] == true && visit[j] == true) {
                     // System.out.println("map[i][j] = " + map[i][j]);
