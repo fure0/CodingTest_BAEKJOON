@@ -11,8 +11,8 @@ public class P11047 {
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int N = Integer.parseInt(st.nextToken());
-        int K = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken()); //동전종류
+        int K = Integer.parseInt(st.nextToken()); //금액
 
         int[] coin = new int[N];
 
