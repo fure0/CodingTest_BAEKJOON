@@ -19,18 +19,18 @@ public class P9663 {
  
 	}
  
-	public static void nQueen(int depth) {
+	public static void nQueen(int col) {
 		// 모든 원소를 다 채운 상태면 count 증가 및 return 
-		if (depth == N) {
+		if (col == N) { // col이 0부터 넘겨 받기 떄문에
 			count++;
 			return;
 		}
  
 		for (int i = 0; i < N; i++) {
-			arr[depth] = i; //인덱스는 열을 나타내고 값은 칸이 된다.
+			arr[col] = i; //인덱스는 열을 나타내고 값은 칸이 된다.
 			// 놓을 수 있는 위치일 경우 재귀호출
-			if (Possibility(depth)) {
-				nQueen(depth + 1);
+			if (Possibility(col)) {
+				nQueen(col + 1);
 			}
 		}
  

@@ -7,6 +7,7 @@ public class P15649 {
 
     public static boolean[] visit;
     public static int[] arr;
+    public static int N, M;
     public static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
@@ -15,17 +16,17 @@ public class P15649 {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken()); //4
-        int M = Integer.parseInt(st.nextToken()); //2
+        N = Integer.parseInt(st.nextToken()); //4
+        M = Integer.parseInt(st.nextToken()); //2
 
         visit = new boolean[N]; //4
         arr = new int[M]; //2
-        dfs(N, M, 0);
+        dfs(0);
         System.out.println(sb);
 
     }
 
-    public static void dfs(int N, int M, int depth) {
+    public static void dfs(int depth) {
 
         // 재귀 깊이가 M과 같아지면 탐색과정에서 담았던 배열을 출력
         if (depth == M) {
@@ -41,7 +42,7 @@ public class P15649 {
             if (!visit[i]) { // 중복값은 담지 않기 위해
                 visit[i] = true;
                 arr[depth] = i + 1;
-                dfs(N, M, depth + 1);
+                dfs(depth + 1);
 
                 // 자식노드 방문이 끝나고 돌아오면 방문노드를 방문하지 않은 상태로 변경
                 visit[i] = false;
