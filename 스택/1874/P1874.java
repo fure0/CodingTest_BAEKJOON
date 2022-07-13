@@ -47,7 +47,8 @@ public class P1874 {
 
 /*
 
-https://comain.tistory.com/251 < --이글이 이해하기 쉬움
+https://comain.tistory.com/251 <--이글이 이해하기 쉬움
+https://st-lab.tistory.com/182 <--이제는 이글이 더쉽게 느껴진다.
 
 문제
 스택 (stack)은 기본적인 자료구조 중 하나로, 컴퓨터 프로그램을 작성할 때 자주 이용되는 개념이다. 스택은 자료를 넣는 (push) 입구와 자료를 뽑는 (pop) 입구가 같아 제일 나중에 들어간 자료가 제일 먼저 나오는 (LIFO, Last in First out) 특성을 가지고 있다.

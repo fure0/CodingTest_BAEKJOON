@@ -13,13 +13,11 @@ public class P17298 {
 		int N = Integer.parseInt(br.readLine());
 		int[] seq = new int[N];
 		
-		
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		
 		for(int i = 0; i < N; i++) {
 			seq[i] = Integer.parseInt(st.nextToken());
 		}
- 
  
 		for(int i = 0; i < N; i++) {
 			
@@ -33,6 +31,7 @@ public class P17298 {
 				seq[stack.pop()] = seq[i];
 			}
 			
+			// 뺄 값이 없으면 stack에 push
 			stack.push(i);
 		}
 		
