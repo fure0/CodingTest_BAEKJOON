@@ -44,6 +44,7 @@ public class P11866 {
 }
 
 /*
+https://st-lab.tistory.com/197 여기 보면 바로 이해감
 
 문제
 요세푸스 문제는 다음과 같다.
