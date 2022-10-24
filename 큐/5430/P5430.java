@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 
 public class P5430 {
     
-    public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	public static StringBuilder sb = new StringBuilder();
 	
 	public static void main(String[] args) throws IOException {
@@ -16,7 +16,7 @@ public class P5430 {
 		
 		int T = Integer.parseInt(br.readLine());
 		
-		while(T --> 0) {
+		while(T-- > 0) {
 			
 			String command = br.readLine();	// 문제에서 p에 해당하는 명령어
 			int n = Integer.parseInt(br.readLine());

@@ -6,8 +6,8 @@ import java.util.StringTokenizer;
 import java.util.LinkedList;
 
 public class P1966 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		
 		int T = Integer.parseInt(br.readLine());	// 테스트 케이스 
@@ -20,7 +20,7 @@ public class P1966 {
 			int M = Integer.parseInt(st.nextToken()); // 몇 번째로 인쇄되었는지 궁금한 문서가 현재 Queue에서 몇 번째에 놓여 있는지를 나타내는 정수
 			
 			LinkedList<int[]> q = new LinkedList<>();	// Queue로 활용 할 연결리스트
-			st = new StringTokenizer(br.readLine());
+			st = new StringTokenizer(br.readLine()); // 중요도
  
 			for (int i = 0; i < N; i++) {
 				// {초기 위치, 중요도}
@@ -69,7 +69,7 @@ public class P1966 {
  
 		}
 		System.out.println(sb);
-    }
+	}
 }
 
 
@@ -90,7 +90,10 @@ poll 메소드는 앞에걸 뺀다. 빼면 queue의 크기는 줄어든다.
 입력
 첫 줄에 테스트케이스의 수가 주어진다. 각 테스트케이스는 두 줄로 이루어져 있다.
 
-테스트케이스의 첫 번째 줄에는 문서의 개수 N(1 ≤ N ≤ 100)과, 몇 번째로 인쇄되었는지 궁금한 문서가 현재 Queue에서 몇 번째에 놓여 있는지를 나타내는 정수 M(0 ≤ M < N)이 주어진다. 이때 맨 왼쪽은 0번째라고 하자. 두 번째 줄에는 N개 문서의 중요도가 차례대로 주어진다. 중요도는 1 이상 9 이하의 정수이고, 중요도가 같은 문서가 여러 개 있을 수도 있다.
+테스트케이스의 첫 번째 줄에는 문서의 개수 N(1 ≤ N ≤ 100)과, 
+몇 번째로 인쇄되었는지 궁금한 문서가 현재 Queue에서 몇 번째에 놓여 있는지를 나타내는 정수 M(0 ≤ M < N)이 주어진다. 
+이때 맨 왼쪽은 0번째라고 하자. 두 번째 줄에는 N개 문서의 중요도가 차례대로 주어진다. 
+중요도는 1 이상 9 이하의 정수이고, 중요도가 같은 문서가 여러 개 있을 수도 있다.
 
 출력
 각 테스트 케이스에 대해 문서가 몇 번째로 인쇄되는지 출력한다.

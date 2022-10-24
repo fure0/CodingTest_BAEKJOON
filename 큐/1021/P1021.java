@@ -6,9 +6,9 @@ import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class P1021 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
 		LinkedList<Integer> deque = new LinkedList<Integer>();
 		
 		int count = 0;	// 2, 3번 연산 횟수 누적 합 변수
@@ -37,12 +37,12 @@ public class P1021 {
 			int target_idx = deque.indexOf(seq[i]);
 			int half_idx;
 			/*
-			 *  만약 현재 덱의 원소가 짝수 개라면 중간 지점을 
-			 *  현재 덱의 절반 크기에서 -1 감소시킨다. 
-			 *  
-			 *  {1, 2, 3, 4} 일 때, 2를 중간지점으로 하면
-			 *  인덱스는 1이기 때문
-			 */
+				*  만약 현재 덱의 원소가 짝수 개라면 중간 지점을 
+				*  현재 덱의 절반 크기에서 -1 감소시킨다. 
+				*  
+				*  {1, 2, 3, 4} 일 때, 2를 중간지점으로 하면
+				*  인덱스는 1이기 때문
+				*/
 			if(deque.size() % 2 == 0) {
 				half_idx = deque.size() / 2 - 1;
 			}
@@ -73,7 +73,7 @@ public class P1021 {
 		}
 		
 		System.out.println(count);
-    }
+	}
 }
 
 

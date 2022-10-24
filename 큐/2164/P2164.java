@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 public class P2164 {
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		Queue<Integer> q = new LinkedList<>();
 		
@@ -22,10 +22,10 @@ public class P2164 {
 			q.poll();	// 맨 앞의 원소 버림 
 			q.offer(q.poll());	// 맨 앞의 원소를 버림과 동시에 버려진 원소를 맨 뒤에 삽입 
 		}
-		
-        System.out.println(q.poll());	// 마지막으로 남은 원소 출력
-        
-    }
+	
+		System.out.println(q.poll());	// 마지막으로 남은 원소 출력
+			
+	}
 }
 
 /*
