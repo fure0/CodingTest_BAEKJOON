@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 public class P14888 {
 
-    public static int MAX = Integer.MIN_VALUE;	// 최댓값 
+	public static int MAX = Integer.MIN_VALUE;	// 최댓값 
 	public static int MIN = Integer.MAX_VALUE;	// 최솟값 
 	public static int[] operator = new int[4];	// 연산자 개수 
 	public static int[] number;					// 숫자 

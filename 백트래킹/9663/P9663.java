@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class P9663 {
     
-    public static int[] arr;
+	public static int[] arr;
 	public static int N;
 	public static int count = 0;
  
@@ -37,14 +37,14 @@ public class P9663 {
 	}
  
 	public static boolean Possibility(int col) {
-        // 가로:row
-        // 세로:col
-        // 같은행이나 대각선에 존재하는지 체크
+		// 가로:row
+		// 세로:col
+		// 같은행이나 대각선에 존재하는지 체크
 		for (int i = 0; i < col; i++) {
-            // 해당 열의 행과 i열의 행이 일치할경우 (같은 행에 존재할 경우) 
-            // 위의 arr[depth] = i; 주목
-            // 첫째 열은 0행에 배치, 둘째 열은 0행에 배치 return false
-            // 첫째 열은 0행에 배치, 둘째 열은 1행에 배치 통과
+			// 해당 열의 행과 i열의 행이 일치할경우 (같은 행에 존재할 경우) 
+			// 위의 arr[depth] = i; 주목
+			// 첫째 열은 0행에 배치, 둘째 열은 0행에 배치 return false
+			// 첫째 열은 0행에 배치, 둘째 열은 1행에 배치 통과
 			if (arr[col] == arr[i]) {
 				return false;
 			} 
@@ -52,11 +52,11 @@ public class P9663 {
 			/*
 			 * 대각선상에 놓여있는 경우
 			 * (열의 차와 행의 차가 같을 경우가 대각선에 놓여있는 경우다)
-             * abs 절대값 
-             * 대각선 체크 절대값(abs)(퀸의 열 - 현재열)) == (핸재행 - 퀸의행)
-             * 퀸이 (0,1) 기준으로 (1,0) 이나 (1,2)를 계산해보면
-             * abs(0-1) = 1, abs(1-0) = 1
-             * abs(0-1) = 1, abs(1-2) = 1
+			 * abs 절대값 
+			 * 대각선 체크 절대값(abs)(퀸의 열 - 현재열)) == (핸재행 - 퀸의행)
+			 * 퀸이 (0,1) 기준으로 (1,0) 이나 (1,2)를 계산해보면
+			 * abs(0-1) = 1, abs(1-0) = 1
+			 * abs(0-1) = 1, abs(1-2) = 1
 			 */
 			else if (Math.abs(col - i) == Math.abs(arr[col] - arr[i])) {
 				return false;

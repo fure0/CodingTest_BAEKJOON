@@ -24,7 +24,7 @@ public class P2606 {
         Queue<Integer> q = new LinkedList<>(); //bfs를 사용할 예정
         boolean[] visit = new boolean[n + 1]; //컴퓨터를 확인했는가
 
-        q.add(1);
+        q.add(1); // 1번부터 시작이니 큐에 1을 넣어준다.
         visit[1] = true;
 
         int count = 0;

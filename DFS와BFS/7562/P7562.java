@@ -26,7 +26,7 @@ public class P7562 {
             targetX = Integer.parseInt(st.nextToken());
             targetY = Integer.parseInt(st.nextToken());
             
-            Point start = new Point(currentX,currentY);
+            Point start = new Point(currentX, currentY);
             Point target = new Point(targetX, targetY);
             
             bfs(start, target, arr);

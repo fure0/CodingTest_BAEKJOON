@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 public class P15652 {
     
-    public static int N, M;
+	public static int N, M;
 	public static int[] arr;
 	public static StringBuilder sb = new StringBuilder();
  

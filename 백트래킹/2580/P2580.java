@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class P2580 {
-    public static int[][] arr = new int[9][9];
+	public static int[][] arr = new int[9][9];
  
 	public static void main(String[] args) throws IOException {
  

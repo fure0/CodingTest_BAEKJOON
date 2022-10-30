@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 public class P15651 {
     
-    public static int[] arr;
+  public static int[] arr;
 	public static int N, M;
 	public static StringBuilder sb = new StringBuilder();
  
@@ -33,10 +33,10 @@ public class P15651 {
 			return;
 		}
  
-        // arr[0] = 1 인채로 arr[1] = 1 ..2  == M 이런식으로 루프가 돈다
+		// arr[0] = 1 인채로 arr[1] = 1 ..2  == M 이런식으로 루프가 돈다
 		for (int i = 1; i <= N; i++) {
 			arr[depth] = i;
-            dfs(depth + 1);
+			dfs(depth + 1);
 		}
 	}
 

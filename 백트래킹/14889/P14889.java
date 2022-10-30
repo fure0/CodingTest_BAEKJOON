@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class P14889 {
-    static int N;
+	static int N;
 	static int[][] map;
 	static boolean[] visit;
 	
