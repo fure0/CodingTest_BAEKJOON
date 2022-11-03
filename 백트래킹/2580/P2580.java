@@ -45,7 +45,7 @@ public class P2580 {
  
 		// 만약 해당 위치의 값이 0 이라면 1부터 9까지 중 가능한 수 탐색
 		if (arr[row][col] == 0) {
-			for (int i = 1; i <= 9; i++) {
+			for (int i = 1; i <= 9; i++) { // 1부터 시작함 주의
 				// i 값이 중복되지 않는지 검사
 				if (possibility(row, col, i)) {
 					arr[row][col] = i;

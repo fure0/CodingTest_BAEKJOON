@@ -11,18 +11,18 @@ public class P2667 {
     static int N; // 지도의 크기
 
     // <- , ↑ , -> , ↓ ... 동서남북 4방향 체크해가며 dfs 돌리기
-    public static void dfs(int x, int y) {
-        map[x][y] = count; // 방문한 집 => count로 표시(1, 2, 3, ... 하나씩 증가)
-        visit[x][y] = true; // 방문한 집 => true 체크
+    public static void dfs(int y, int x) {
+        map[y][x] = count; // 방문한 집 => count로 표시(1, 2, 3, ... 하나씩 증가)
+        visit[y][x] = true; // 방문한 집 => true 체크
         for (int i = 0; i < 4; i++) { // 현재좌표 기준 좌상우하 체크
             // 좌(0,-1) 상(-1, 0), 우(0, 1), 하(1, 0) 순으로
-            int nx = x + dx[i];
             int ny = y + dy[i];
+            int nx = x + dx[i];
 
             // nx, ny = 좌표의 범위, N*N 크기이므로 x, y좌표가 0보단 커야하고 N보단 작아야함.
-            if (nx >= 0 && ny >= 0 && nx < N && ny < N) {
-                if (map[nx][ny] == 1 && visit[nx][ny] == false) {
-                    dfs(nx, ny); // 1이면서 방문하지 않은곳 => dfs 돌리기
+            if (ny >= 0 && nx >= 0 && ny < N && nx < N) {
+                if (map[ny][nx] == 1 && visit[ny][nx] == false) {
+                    dfs(ny, nx); // 1이면서 방문하지 않은곳 => dfs 돌리기
                 }
             }
         }

@@ -17,12 +17,13 @@ public class P7576 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        m = Integer.parseInt(st.nextToken());
-        n = Integer.parseInt(st.nextToken());
+        // 문제에서 가로부터 입력됨 주의
+        m = Integer.parseInt(st.nextToken()); // 가로
+        n = Integer.parseInt(st.nextToken()); // 세로
         tomatoes = new int[n][m];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { // 4
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < m; j++) {
+            for (int j = 0; j < m; j++) { // 6
                 tomatoes[i][j] = Integer.parseInt(st.nextToken());
             }
         }
@@ -39,24 +40,24 @@ public class P7576 {
 
         while (!q.isEmpty()) {
             int now[] = q.poll();
-            int nowX = now[0];
-            int nowY = now[1];
+            int nowY = now[0];
+            int nowX = now[1];
 
             for (int i = 0; i < 4; i++) {
-                int nextX = nowX + dx[i];
                 int nextY = nowY + dy[i];
+                int nextX = nowX + dx[i];
 
                 // 범위 밖으로 벗어나면 continue
-                if (nextX < 0 || nextY < 0 || nextX > n - 1 || nextY > m - 1)
+                if (nextY < 0 || nextX < 0 || nextY > n - 1 || nextX > m - 1)
                     continue;
 
                 // 토마토가 없거나, 익은 토마토라면 continue
-                if (tomatoes[nextX][nextY] != 0)
+                if (tomatoes[nextY][nextX] != 0)
                     continue;
 
                 // 위 조건들을 만족하지 않는다면 다음 칸 갱신 후 큐에 다음 칸 인덱스 추가
-                tomatoes[nextX][nextY] = tomatoes[nowX][nowY] + 1;
-                q.add(new int[] { nextX, nextY });
+                tomatoes[nextY][nextX] = tomatoes[nowY][nowX] + 1;
+                q.add(new int[] { nextY, nextX });
             }
         }
 

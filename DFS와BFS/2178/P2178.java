@@ -17,8 +17,8 @@ public class P2178 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken()); // 세로
+        m = Integer.parseInt(st.nextToken()); // 가로
 
         map = new int[n][m];
         for (int i = 0; i < n; i++) {
@@ -35,26 +35,26 @@ public class P2178 {
     }
 
     public static void bfs(int x, int y) {
-        Queue<int[]> q = new LinkedList<>();
+        Queue<int[]> q = new LinkedList<>(); // 상하좌우 문제를 큐로 푸는 경우니까 int[]를 사용
         q.add(new int[] { x, y });
 
         while (!q.isEmpty()) {
             int now[] = q.poll();
-            int nowX = now[0];
-            int nowY = now[1];
+            int nowY = now[0];
+            int nowX = now[1];
 
             for (int i = 0; i < 4; i++) {
-                int nextX = nowX + dx[i];
                 int nextY = nowY + dy[i];
+                int nextX = nowX + dx[i];
 
-                if (nextX < 0 || nextY < 0 || nextX >= n || nextY >= m)
+                if (nextY < 0 || nextX < 0 || nextY >= n || nextX >= m)
                     continue;
-                if (visited[nextX][nextY] || map[nextX][nextY] == 0)
+                if (visited[nextY][nextX] || map[nextY][nextX] == 0)
                     continue;
 
-                q.add(new int[] { nextX, nextY });
-                map[nextX][nextY] = map[nowX][nowY] + 1; //최종 코스트를 계산하기 위해
-                visited[nextX][nextY] = true;
+                q.add(new int[] { nextY, nextX });
+                map[nextY][nextX] = map[nowY][nowX] + 1; //최종 코스트를 계산하기 위해
+                visited[nextY][nextX] = true;
             }
         }
     }
