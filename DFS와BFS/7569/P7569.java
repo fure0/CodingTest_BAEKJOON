@@ -18,7 +18,7 @@ public class P7569 {
         int z;
 
         public node(int x, int y, int z) {
-            super();
+            super(); // 부모 생성자 호출
             this.x = x;
             this.y = y;
             this.z = z;
