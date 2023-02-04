@@ -27,6 +27,7 @@ public class P7569 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        // StringTokenizer은 기본으로 " " 으로 구분짓는다. 이번 문제의 작성 방법에 혼동 주의
         StringTokenizer st = new StringTokenizer(in.readLine());
         int M = Integer.parseInt(st.nextToken());
         int N = Integer.parseInt(st.nextToken());

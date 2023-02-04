@@ -42,6 +42,7 @@ public class P1966 {
 						
 						// 뽑은 원소 및 i 이전의 원소들을 뒤로 보낸다.
 						q.offer(front);
+						// (?? 이분분 없어도 딱히 문제 없어 보임)
 						for(int j = 0; j < i; j++) {
 							q.offer(q.poll());
 						}

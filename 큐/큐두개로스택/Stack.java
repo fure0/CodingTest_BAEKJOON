@@ -14,6 +14,8 @@ public class Stack<T> {
     while (queue1.size() > 1) {
       queue2.add(queue1.poll());
     }
+    // queue1 = 3
+    // queue2 = 1,2
 
     Queue<T> temp = queue1;
     queue1 = queue2;

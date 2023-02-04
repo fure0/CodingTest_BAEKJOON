@@ -27,8 +27,8 @@ public class P11047 {
             // 현재 동전의 가치가 K보다 작거나 같아야지 구성가능하다.
             if (coin[i] <= K) {
                 // 현재 가치의 동전으로 구성할 수 있는 개수를 더해준다.
-                count += (K / coin[i]);
-                K = K % coin[i];
+                count += (K / coin[i]); // /연산은 몇번 나눌수 있는가
+                K = K % coin[i]; // %연산은 나머지
             }
         }
         System.out.println(count);
